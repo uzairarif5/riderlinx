@@ -4,4 +4,9 @@
 
 ## Updates
 
+Versioning is done using "npm version [new-version] --git-tag-version false".
+
+update 0.2.0:
+- Desktop version almost complete.
+
 first commit

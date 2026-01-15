@@ -1,6 +1,6 @@
 {
   "name": "riderlinx",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev -p 8888",
@@ -11,7 +11,8 @@
   "dependencies": {
     "next": "16.1.1",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "react-rough-notation": "^1.0.8"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

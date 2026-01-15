@@ -1,65 +1,122 @@
-import Image from "next/image";
+"use client"
+
+import Link from "next/link";
+import Hero from "./homePageComps/Hero";
+import ObserverSection from "./homePageComps/ObserverSection";
+import { secondColor } from "./constants";
+import HowRiderLinxWorks from "./homePageComps/HowRiderLinxWorks";
+import { CardWithTitle } from "./homePageComps/Cards";
+import OperatingPrinciple from "./homePageComps/OperatingPrinciple";
+import CurrentStatus from "./homePageComps/CurrentStatus";
+import Form from "./homePageComps/Form";
+import { Dispatch, SetStateAction, useState } from "react";
 
 export default function Home() {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+  const [FormVisibility, chgFV] = useState(false);
+
+  return <main>
+    <Hero chgFV={chgFV}/>
+    <WhatRiderLinxIs/>
+    <WhyThisMattersNow/>
+    <WhatRiderLinxIsNot/>
+    <HowRiderLinxWorks/>
+    <RiderStatus/>
+    <DesignedForInstitutions/>
+    <OperatingPrinciple/>
+    <CurrentStatus/>
+    <Contact chgFV={chgFV}/>
+    <Form vis={FormVisibility} chgFV={chgFV}/>
+  </main>;
+}
+
+
+function WhatRiderLinxIs() {
+  return <ObserverSection>
+    <h2>What RiderLinx Is</h2>
+    <p>RiderLinx is an independent operator of neutral administrative infrastructure for regulated and transitioning e-bike courier environments.</p>
+    <p>The focus is on what regulation depends on, before and after it is introduced:</p>
+    <ul>
+      <li>documenting rider activity, assets, and incidents using structured records</li>
+      <li>preserving continuity across programs, pilots, and jurisdictions</li>
+      <li>enabling eligibility and participation rules to be administered when authority is delegated</li>
+    </ul>
+    <p>This infrastructure allows regulatory frameworks to remain functional as scale increases.</p>
+    <p>All systems are policy aligned, audit ready, and designed to integrate within existing municipal and institutional structures.</p>
+  </ObserverSection>;
+}
+
+function WhyThisMattersNow() {
+  return <ObserverSection>
+    <h2>Why This Matters Now</h2>
+    <p>Courier activity has reached a scale where informal oversight no longer works.</p>
+    <p>Cities face rising safety, battery, and incident response pressures.<br/> 
+    Insurers cannot underwrite undocumented or unmanaged exposure.<br/>
+    Delivery programs risk exclusion from regulated environments.</p> 
+    <p>Without structured incident and exposure records, risk remains invisible. Regulation, insurance, and pilots cannot operate reliably.</p>
+  </ObserverSection>;
+}
+
+function WhatRiderLinxIsNot() {
+  return <ObserverSection>
+    <h2>What RiderLinx Is Not</h2>
+    <p>RiderLinx is not:</p>
+    <ul>
+      <li>a delivery platform</li> 
+      <li>a rider advocacy organization</li> 
+      <li>an insurer or insurance intermediary</li> 
+      <li>a training, certification, or licensing authority</li>
+    </ul>
+    <p>RiderLinx does not replace regulation.</p> 
+    <p>It exists to support the operation of regulation over time.</p> 
+  </ObserverSection>;
+}
+
+function RiderStatus() {
+  return <ObserverSection>
+    <h2>RiderStatus</h2>
+    <p>RiderStatus is a core RiderLinx system that converts undocumented rider activity and incidents into structured, rider controlled administrative records. 
+    </p>
+    <p>RiderStatus functions as the intake and documentation layer that:</p>
+    <ul>
+      <li>records rider assets and baseline exposure context</li>
+      <li>captures incident documentation using consistent, reviewable criteria</li> 
+      <li>preserves longitudinal continuity without real time tracking or enforcement</li> 
+      <li>enables later eligibility, pilot participation, and underwriting when authorized</li> 
+    </ul>
+    <p>RiderStatus does not assign fault, certify competence, or enforce behavior.</p>
+    <p>It exists to make rider risk legible, auditable, and referenceable before authority is delegated and after regulation is introduced.</p>
+    <Link href={"/riderStatus"} style={{textDecoration: "underline"}}>Learn more about RiderStatus &rarr;</Link>
+  </ObserverSection>;
+}
+
+function DesignedForInstitutions() {
+  return <ObserverSection>
+    <h2>Designed For Institutions</h2>
+    <div style={{display: "flex", justifyContent: "space-evenly", paddingTop: "20px"}}>
+      <CardWithTitle
+        title="Cities"
+        text="Reduce the administrative burden that regulation depends on without expanding enforcement capacity or assuming additional liability."
+        rotation={5}
+      />
+      <CardWithTitle
+        title="Insurers"
+        text="Enable underwriting analysis based on documented incidents, asset records, and longitudinal exposure histories."
+        rotation={-4}
+      />
+      <CardWithTitle
+        title="Delivery Programs"
+        text="Operate within regulated or pilot environments through externally administered documentation and participation requirements."
+        rotation={4}
+      />
     </div>
-  );
+  </ObserverSection>;
+}
+
+function Contact(props: {chgFV: Dispatch<SetStateAction<boolean>>}) {
+  return <ObserverSection>
+    <h2>Contact</h2>
+    <p>RiderLinx is not a consumer service.</p>
+    <p>This work is intended for cities, insurers, and operating partners engaged in regulated or transitioning environments.</p>
+    <button type="button" style={{cursor: "pointer", backgroundColor: secondColor, color: "white", padding: "10px", borderRadius: "6px", border: "solid 2px rgba(0,0,0,0.2)", fontSize: "20px", fontWeight:"bold", outline: "none"}} className="expandOnHover" onClick={()=>props.chgFV(true)}>Request a briefing</button>
+  </ObserverSection>;
 }
