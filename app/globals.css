@@ -3,7 +3,7 @@
 :root {
   --primary-color: #083b5a;
   --secondary-color: rgb(243, 254, 251);
-  --card-color: rgb(105, 224, 169);
+  --accent-color: rgb(105, 224, 169);
 }
 
 body {
@@ -66,13 +66,23 @@ body {
   form {
     label{
       font-weight: bold;
-    }    
-    input, textarea, select{
-      display: block;
+      color: white; 
+    } 
+
+    input{
       width: 200px;
-      background-color: white;
+    }
+    textarea, select{
+      width: 250px;
+    }
+    input, textarea, select{
+      font-size: 15px;
+      padding: 1px 3px;
+      color: black;
+      display: block;
       border-radius: 5px;
-      border: 2px solid rgba(0,0,0,0.2);
+      background-color: var(--secondary-color);
+      border: 2px solid var(--primary-color);
       margin: 10px auto;
       resize: none;
 

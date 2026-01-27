@@ -1,6 +1,6 @@
 "use client"
 
-import { secondColor, darkBlueColorOpaque } from "../constants";
+import { accentColor, primaryColorOpaque } from "../constants";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 
 export default function Hero(props: {chgFV: Dispatch<SetStateAction<boolean>>}) {
@@ -31,14 +31,12 @@ export default function Hero(props: {chgFV: Dispatch<SetStateAction<boolean>>}) 
       divHeight.current = divRef.current?.offsetHeight + "px";
       chgOpacity(0);
     }, 6000);
-  }, [textOpacity]);
-
-  
+  }, [textOpacity]);  
 
   return <section style={{height: "100vh", width: "100%", backgroundImage: "url('/bikeWithCity.jpg')", backgroundPosition: "center", backgroundSize: "cover", paddingTop:"1px", paddingLeft: "20px"}}>
-    <h1 style={{marginTop: "15vh", fontSize: "40px", width: "800px", maxWidth: "70%", backgroundColor: darkBlueColorOpaque, padding: "10px", color: "white", backdropFilter: "blur(2px)", border: "solid 2px rgba(0,0,0,0.2)", borderRadius: "6px"}}><b>RiderLinx</b>: operational infrastructure for regulated e-bike courier systems.</h1>
-    <div id="heroDiv" style={{marginTop: "15px", fontSize: "20px", width: "700px", maxWidth: "60%", backgroundColor: darkBlueColorOpaque, padding: "5px", backdropFilter: "blur(5px)", border: "solid 2px rgba(0,0,0,0.2)", overflow:"hidden", transition: "height ease-in-out 1s", borderRadius: "6px", interpolateSize: "allow-keywords", height: divHeight.current}} ref={divRef}><div style={{opacity: textOpacity, transition: "opacity linear 0.5s", color: "white"}}>{rotationText[subTextIdx.current]}</div></div>
+    <h1 style={{marginTop: "15vh", fontSize: "40px", width: "800px", maxWidth: "70%", backgroundColor: primaryColorOpaque, padding: "10px", color: "white", backdropFilter: "blur(2px)", border: "solid 2px rgba(0,0,0,0.2)", borderRadius: "6px"}}><b>RiderLinx</b>: operational infrastructure for regulated e-bike courier systems.</h1>
+    <div id="heroDiv" style={{marginTop: "15px", fontSize: "20px", width: "700px", maxWidth: "60%", backgroundColor: primaryColorOpaque, padding: "5px", backdropFilter: "blur(5px)", border: "solid 2px rgba(0,0,0,0.2)", overflow:"hidden", transition: "height ease-in-out 1s", borderRadius: "6px", interpolateSize: "allow-keywords", height: divHeight.current}} ref={divRef}><div style={{opacity: textOpacity, transition: "opacity linear 0.5s", color: "white"}}>{rotationText[subTextIdx.current]}</div></div>
     
-    <button type="button" style={{position: "absolute", bottom: "10px", cursor: "pointer", backgroundColor: secondColor, color: "white", padding: "10px", borderRadius: "6px", border: "solid 2px rgba(0,0,0,0.2)", fontSize: "20px", fontWeight:"bold", outline: "none"}} className="expandOnHover" onClick={()=>props.chgFV(true)}>Request a briefing</button>
+    <button type="button" style={{position: "absolute", bottom: "10px", cursor: "pointer", backgroundColor: accentColor, color: "white", padding: "10px", borderRadius: "6px", border: "solid 2px rgba(0,0,0,0.2)", fontSize: "20px", fontWeight:"bold", outline: "none"}} className="expandOnHover" onClick={()=>props.chgFV(true)}>Request a briefing</button>
   </section>;
 }

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Hero from "./homePageComps/Hero";
 import ObserverSection from "./homePageComps/ObserverSection";
-import { secondColor } from "./constants";
+import { accentColor } from "./constants";
 import HowRiderLinxWorks from "./homePageComps/HowRiderLinxWorks";
 import { CardWithTitle } from "./homePageComps/Cards";
 import OperatingPrinciple from "./homePageComps/OperatingPrinciple";
@@ -117,6 +117,6 @@ function Contact(props: {chgFV: Dispatch<SetStateAction<boolean>>}) {
     <h2>Contact</h2>
     <p>RiderLinx is not a consumer service.</p>
     <p>This work is intended for cities, insurers, and operating partners engaged in regulated or transitioning environments.</p>
-    <button type="button" style={{cursor: "pointer", backgroundColor: secondColor, color: "white", padding: "10px", borderRadius: "6px", border: "solid 2px rgba(0,0,0,0.2)", fontSize: "20px", fontWeight:"bold", outline: "none"}} className="expandOnHover" onClick={()=>props.chgFV(true)}>Request a briefing</button>
+    <button type="button" style={{cursor: "pointer", backgroundColor: accentColor, color: "white", padding: "10px", borderRadius: "6px", border: "solid 2px rgba(0,0,0,0.2)", fontSize: "20px", fontWeight:"bold", outline: "none"}} className="expandOnHover" onClick={()=>props.chgFV(true)}>Request a briefing</button>
   </ObserverSection>;
 }

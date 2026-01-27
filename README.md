@@ -6,6 +6,10 @@
 
 Versioning is done using "npm version [new-version] --git-tag-version false".
 
+update 1.0.0:
+- Changed the form and made it workable.
+- Made some coding changes (color variables names).
+
 update 0.2.0:
 - Desktop version almost complete.
 

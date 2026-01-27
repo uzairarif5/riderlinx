@@ -1,4 +1,4 @@
-import { darkBlueColorOpaque } from "../constants";
+import { primaryColorOpaque } from "../constants";
 
 export default function RiderStatus() {
   return <main>
@@ -15,7 +15,7 @@ export default function RiderStatus() {
 
 function Hero() {
   return <section style={{backgroundImage:"url(/ridingBike.jpg)", backgroundSize: "cover", height: "80vh"}}>
-    <div style={{color: "white", backdropFilter: "blur(2px)", border: "solid 2px rgba(0,0,0,0.2)", borderRadius: "6px", backgroundColor: darkBlueColorOpaque, width: "400px", padding: "10px",marginTop: "40px"}}>
+    <div style={{color: "white", backdropFilter: "blur(2px)", border: "solid 2px rgba(0,0,0,0.2)", borderRadius: "6px", backgroundColor: primaryColorOpaque, width: "400px", padding: "10px",marginTop: "40px"}}>
       <h1 style={{fontSize: "50px"}}>Rider Status</h1>
       <small style={{fontSize: "18px"}}>A RiderLinx system for rider controlled incident and asset documentation.</small>
     </div>

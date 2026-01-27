@@ -1,7 +1,7 @@
 "use client"
 
 import { ReactNode, useEffect, useRef, useState } from "react";
-import { darkBlueColor } from "../constants";
+import { primaryColor } from "../constants";
 import { Card } from "./Cards";
 import ObserverSection from "./ObserverSection";
 import { RoughNotation } from "react-rough-notation";
@@ -41,5 +41,5 @@ export default function OperatingPrinciple() {
 
 function EmphasisText(props: {children: ReactNode, pos: number, isVisible: boolean}) {
   const deg = 2;
-  return <p style={{maxWidth: "100%", fontSize: "30px", opacity: "0.9", fontWeight: "bold", transform:`rotateZ(${deg}deg)`, marginBottom:"0px"}}><RoughNotation type="underline" show={props.isVisible} strokeWidth={2} color={darkBlueColor}>{props.children}</RoughNotation></p>;
+  return <p style={{maxWidth: "100%", fontSize: "30px", opacity: "0.9", fontWeight: "bold", transform:`rotateZ(${deg}deg)`, marginBottom:"0px"}}><RoughNotation type="underline" show={props.isVisible} strokeWidth={2} color={primaryColor}>{props.children}</RoughNotation></p>;
 }

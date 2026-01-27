@@ -1,6 +1,6 @@
 "use client"
 
-import { darkBlueColor } from "../constants";
+import { primaryColor } from "../constants";
 import { RoughNotation } from "react-rough-notation";
 import ObserverSection from "./ObserverSection";
 import { Card } from "./Cards";
@@ -35,7 +35,7 @@ export default function HowRiderLinxWorks() {
           <li>maintain audit ready histories across pilots and regulated environments</li>
         </ul>
       </div>
-      <Card width={"280px"} rotation={-5}><RoughNotation type="circle" color={darkBlueColor} show={isVisible} strokeWidth={3} padding={[30,30,30,30]}>
+      <Card width={"280px"} rotation={-5}><RoughNotation type="circle" color={primaryColor} show={isVisible} strokeWidth={3} padding={[30,30,30,30]}>
         <p>No real time enforcement.<br/> 
         No behavioral scoring.<br/>
         No speculative automation.<br/> 
