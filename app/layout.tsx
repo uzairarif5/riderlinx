@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
 import Image from 'next/image';
-import { notoSans , primaryColor } from "./constants";
+import { notoSans } from "./constants";
 
 export const metadata: Metadata = {
   title: "RiderLinx",
-  description: "An operational infrastructure for regulated e-bike courier systems.",
+  description: "Structured registry and record infrastructure for commercial e-bike delivery ecosystems.",
 };
+
 
 export default function RootLayout({children}: Readonly<{children: React.ReactNode;}>) {
   return <html lang="en">
@@ -20,13 +21,13 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
 }
 
 function Header() {
-  return <header style={{position: "sticky", top: 0, zIndex: 2, display:"flex", justifyContent:"space-between"}}>
-    <nav className=" w-full" style={{userSelect: "none", backgroundColor: primaryColor, position: "relative", padding: "10px"}}>
+  return <header style={{position: "sticky", top: 0, zIndex: 2}}>
+    <nav className=" w-full" style={{userSelect: "none", position: "relative", padding: "10px", display:"flex", justifyContent:"space-between", flexWrap: "wrap", rowGap: "10px"}}>
       <Link href={"/"} style={{fontSize: "35px", textDecoration: "none", color: "white", outline: "none"}}>
         <Image src="/logo.png" alt="" width={50} height={50} style={{display: "inline-block",marginRight:"4px"}}/>
         RiderLinx
       </Link>
-      <span style={{display: "flex", columnGap: "30px", right: "20px"}}>
+      <span style={{display: "flex", columnGap: "30px", alignItems: "center"}}>
         <Link href={"/"}>Home</Link>
         <Link href={"/privacy"}>Privacy</Link>
         <Link href={"/disclaimers"}>Disclaimers</Link>
@@ -37,7 +38,7 @@ function Header() {
 }
 
 function Footer() {
-  return <footer style={{backgroundColor: primaryColor, color: "white", padding: "40px", display: "grid", gridTemplateColumns:"auto 60px", gridTemplateRows: "auto auto"}}>
+  return <footer style={{padding: "40px", display: "grid", gridTemplateColumns:"auto 60px", gridTemplateRows: "auto auto"}}>
     <p style={{gridColumn:"1"}}>RiderLinx is operated by Ribenn Inc.</p>
     <Image src="/logo.png" alt="" width={50} height={50} style={{gridRow: "1 / span 2",gridColumn:"2"}}/>
     <p style={{gridColumn:"1"}}>Links: <Link href={"/privacy"}>Privacy</Link> | <Link href={"/disclaimers"}>Disclaimers</Link></p>

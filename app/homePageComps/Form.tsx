@@ -1,5 +1,4 @@
 import { Dispatch, FormEvent, SetStateAction, useRef } from "react";
-import { primaryColor, primaryColorOpaque } from "../constants";
 
 export default function Form(props: {vis: boolean, chgFV: Dispatch<SetStateAction<boolean>>}) { 
   const dRef = useRef<HTMLDialogElement | null>(null);
@@ -10,12 +9,12 @@ export default function Form(props: {vis: boolean, chgFV: Dispatch<SetStateActio
     else dRef.current.close();
   }
 
-  return <dialog ref={dRef} style={{backgroundColor: primaryColorOpaque, backdropFilter: "blur(15px)", outline:"none", margin: "auto", padding: "10px", borderRadius: "6px", border: `3px solid ${primaryColor}`}}>
-    <div style={{display:"grid", gridTemplateColumns:"20px 460px 20px"}}>
+  return <dialog ref={dRef} style={{backdropFilter: "blur(15px)", outline:"none", margin: "auto", padding: "10px", borderRadius: "6px"}}>
+    <div style={{display:"grid", gridTemplateColumns:"20px auto 20px"}}>
       <span style={{userSelect:"none",opacity:"0"}}>X</span>
-      <h3 style={{textAlign:"center", marginBottom: "20px", color: "white"}}>Please Fill This Form</h3>
-      <button onClick={()=>{props.chgFV(false)}} style={{cursor: "pointer", marginBottom: "30px", color: "white"}}>X</button>
-      <form style={{display:"grid", gridTemplateColumns:"45% 55%", width: "500px"}} ref={fRef} onSubmit={(event) => sendEmail(event, fRef.current!, props.chgFV)}>
+      <h3 style={{textAlign:"center", marginBottom: "20px"}}>Please Fill This Form</h3>
+      <button id="closeButton" onClick={()=>{props.chgFV(false)}} style={{cursor: "pointer", marginBottom: "30px"}}>X</button>
+      <form style={{display:"flex", rowGap: "10px", flexWrap: "wrap", justifyContent: "space-around", gridColumn: "1 / span 3"}} ref={fRef} onSubmit={(event) => sendEmail(event, fRef.current!, props.chgFV)}>
         <div>
           <label htmlFor="name">Name:</label>
           <input type="text" id="name" name="name" required autoComplete="name"></input>
@@ -27,7 +26,7 @@ export default function Form(props: {vis: boolean, chgFV: Dispatch<SetStateActio
           <input type="text" id="role" name="role"></input>
         </div>
         <div>
-          <label htmlFor="purpose">Purpose:</label>
+          <label htmlFor="purpose">Stakeholder Type:</label>
           <select name="purpose" id="purpose" defaultValue={"city"}>
             <option value="city">City</option>
             <option value="insurers">Insurers</option>
@@ -38,7 +37,8 @@ export default function Form(props: {vis: boolean, chgFV: Dispatch<SetStateActio
           <label htmlFor="message">Message:</label>
           <textarea id="message" name="message" style={{height: "150px"}} required></textarea>
         </div>
-        <button type="submit" style={{border: "solid 2px rgba(0,0,0,0.2)", cursor: "pointer", gridColumn: "span 2", width: "100px", justifySelf:"center", borderRadius: "6px", backgroundColor: primaryColor, color:"white"}}>Submit</button>
+        <div style={{flexBasis: "100%", fontSize: "0px"}}>&nbsp;</div>
+        <button type="submit" id="submitButton" style={{cursor: "pointer", width: "100px", justifySelf:"center", borderRadius: "6px", margin: "auto"}}>Submit</button>
       </form>
     </div>
   </dialog>;

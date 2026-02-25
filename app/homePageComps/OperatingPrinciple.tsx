@@ -1,7 +1,6 @@
 "use client"
 
 import { ReactNode, useEffect, useRef, useState } from "react";
-import { primaryColor } from "../constants";
 import { Card } from "./Cards";
 import ObserverSection from "./ObserverSection";
 import { RoughNotation } from "react-rough-notation";
@@ -24,16 +23,16 @@ export default function OperatingPrinciple() {
 
   return <ObserverSection>
     <h2>Operating Principles</h2>
-    <div style={{display: "grid", gridTemplateColumns: "50% 50%", justifyItems: "center"}}>
+    <div style={{display: "flex", justifyContent: "center", flexWrap: "wrap"}}>
       <Card width={"350px"} rotation={-1}>
-        <p>Infrastructure, not advocacy.<br/> 
-        Administration, not enforcement.<br/>
-        Rules, not discretion. </p>
+        <p>Infrastructure - not advocacy.<br/> 
+        Documentation - not enforcement.<br/>
+        Continuity - not surveillance.</p>
       </Card>
-      <div ref={refdiv}>
+      <div ref={refdiv} style={{width: "50%"}}>
         <EmphasisText pos={1} isVisible={isVisible}>We do not eliminate risk.</EmphasisText> 
         <div style={{height: "40px", width:"50%"}}/>
-        <EmphasisText pos={2} isVisible={isVisible}>We make risk legible.</EmphasisText>
+        <EmphasisText pos={2} isVisible={isVisible}>We make risk legible and administratively manageable.</EmphasisText>
       </div>
     </div>
   </ObserverSection>;
@@ -41,5 +40,5 @@ export default function OperatingPrinciple() {
 
 function EmphasisText(props: {children: ReactNode, pos: number, isVisible: boolean}) {
   const deg = 2;
-  return <p style={{maxWidth: "100%", fontSize: "30px", opacity: "0.9", fontWeight: "bold", transform:`rotateZ(${deg}deg)`, marginBottom:"0px"}}><RoughNotation type="underline" show={props.isVisible} strokeWidth={2} color={primaryColor}>{props.children}</RoughNotation></p>;
+  return <p style={{maxWidth: "100%", opacity: "0.9", fontWeight: "bold", transform:`rotateZ(${deg}deg)`, marginBottom:"0px", textAlign: "center"}}><RoughNotation type="underline" show={props.isVisible} strokeWidth={2}>{props.children}</RoughNotation></p>;
 }
