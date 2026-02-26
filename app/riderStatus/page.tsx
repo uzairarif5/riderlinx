@@ -9,7 +9,7 @@ export default function RiderStatus() {
 }
 
 function Hero() {
-  return <section style={{backgroundImage:"url(/ridingBike.jpg)", backgroundSize: "cover", height: "80vh"}}>
+  return <section style={{backgroundImage:"url(/riderStatus.jpg)", backgroundSize: "cover", height: "80vh", backgroundPosition: "center"}}>
     <div className="heroText" style={{color: "white", backdropFilter: "blur(2px)", border: "solid 2px rgba(0,0,0,0.2)", borderRadius: "6px", maxWidth: "400px", padding: "10px"}}>
       <h1 style={{fontSize: "50px", backgroundColor:"transparent"}}>Rider Status</h1>
       <small style={{fontSize: "18px"}}>A structured documentation system for delivery rider assets and incidents.</small>

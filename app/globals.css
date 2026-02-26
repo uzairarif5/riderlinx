@@ -2,7 +2,7 @@
 
 :root {
   --primary-color: #083b5a;
-  --primary-color-opaque:  rgba(8, 59, 90, 0.95);
+  --primary-color-opaque:  rgba(8, 59, 90, 0.9);
   --background-color: #F4F6F8;
   --secondary-color:  #2F5D8A;
   --secondary-color-opaque:  rgba(47, 93, 138, 0.9);
@@ -30,13 +30,6 @@ body {
   }
 
   main {
-
-    h3 {
-      font-weight: bold;
-      font-size: 22px;
-      text-decoration: underline;
-    }
-
     section {
       color: var(--text-primary-color-dark);
       padding: 80px 20px;
@@ -57,7 +50,8 @@ body {
         }
 
         p{
-          margin-bottom: 0 !important;
+          text-align: left;
+          margin-bottom: 0;
         }
       }
 
@@ -67,7 +61,7 @@ body {
 
       .briefingButton{
         color: var(--text-primary-color-light);
-        background-color: var(--secondary-color) !important;
+        background-color: var(--secondary-color);
         outline: none;
         font-size: 20px;
         font-weight:bold;
@@ -75,6 +69,8 @@ body {
         border-radius: 6px;
         cursor: pointer; 
         padding: 10px;
+        display: block;
+        margin: auto;
         transition: transform 0.5s ease-in-out;
 
         &:hover{
@@ -83,6 +79,7 @@ body {
       }
 
       h2 {
+        text-align: center;
         font-weight: bold;
         font-size: 50px;
         margin-bottom: 20px;
@@ -93,13 +90,18 @@ body {
         list-style-type: disc;
 
         li {
+          text-align: left;
           width: fit-content;
         }
       }
 
       ul, p, a{
+        display: block;
         font-size: 20px;
         margin-bottom: 15px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       p, ul{
@@ -110,6 +112,13 @@ body {
         color: var(--text-secondary-color);
       }
 
+      h3 {
+        font-weight: bold;
+        font-size: 22px;
+        text-decoration: underline;
+        text-align: center;
+      }
+
       .cardDiv {
         background-color: var(--accent-color) !important;
         
@@ -117,24 +126,6 @@ body {
           font-weight: bold !important;
           font-size: 18px;
           margin-bottom: 0px !important;
-        }
-      }
-
-      &:nth-child(3n+4) {
-        h2{
-          text-align: right;
-        }
-        p, ul{
-          margin-left: auto;
-        }
-      }
-      &:nth-child(3n+2) {
-        h2 {
-          text-align: center;
-        }
-        p, ul, li{
-          text-align: center;
-          margin: auto;
         }
       }
     }

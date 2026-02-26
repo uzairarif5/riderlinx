@@ -23,7 +23,7 @@ export default function HowRiderLinxWorks() {
   
   return <ObserverSection>
     <h2>How RiderLinx Works</h2>
-    <div style={{display: "flex", justifyContent: "center", alignItems: "center", flexWrap: "wrap", rowGap: "20px"}} ref={refdiv}>
+    <div style={{display: "flex", justifyContent: "space-around", alignItems: "center", flexWrap: "wrap", rowGap: "20px"}} ref={refdiv}>
       <div>
         <p>RiderLinx systems are designed to:</p>
         <ul> 

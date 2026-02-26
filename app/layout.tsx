@@ -27,10 +27,8 @@ function Header() {
         <Image src="/logo.png" alt="" width={50} height={50} style={{display: "inline-block",marginRight:"4px"}}/>
         RiderLinx
       </Link>
-      <span style={{display: "flex", columnGap: "30px", alignItems: "center"}}>
+      <span style={{display: "flex", columnGap: "20px", alignItems: "center", paddingRight: "5px"}}>
         <Link href={"/"}>Home</Link>
-        <Link href={"/privacy"}>Privacy</Link>
-        <Link href={"/disclaimers"}>Disclaimers</Link>
         <Link href={"/riderStatus"}>RiderStatus</Link>
       </span>
     </nav>

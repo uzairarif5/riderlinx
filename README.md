@@ -6,6 +6,10 @@
 
 Versioning is done using "npm version [new-version] --git-tag-version false".
 
+update 2.1.0:
+- Updated css details to match the demanded request.
+- Removed "privacy" and "disclaimer" from top nav.
+
 update 2.0.0:
 - Updated css to work with mobile.
 - Update content and design.

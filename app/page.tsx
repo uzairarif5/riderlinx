@@ -137,7 +137,6 @@ function Contact(props: {chgFV: Dispatch<SetStateAction<boolean>>}) {
     <h2>Contact</h2>
     <p>RiderLinx is not a consumer-facing service.</p>
     <p>This work is intended for cities, insurers, and institutional operators managing regulated or transitioning delivery ecosystems.</p>
-    <button type="button" className="briefingButton" style={{float: "right"}} onClick={()=>props.chgFV(true)}>Request a briefing</button>
-    <div style={{ clear: "both", width: "100%", fontSize: "1px"}}>&nbsp;</div>
+    <button type="button" className="briefingButton" onClick={()=>props.chgFV(true)}>Request a briefing</button>
   </ObserverSection>;
 }

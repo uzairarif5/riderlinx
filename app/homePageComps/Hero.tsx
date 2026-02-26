@@ -31,8 +31,8 @@ export default function Hero(props: {chgFV: Dispatch<SetStateAction<boolean>>}) 
     }, 6000);
   }, [textOpacity]);  
 
-  return <section style={{height: "100vh", width: "100%", backgroundImage: "url('/bikeWithCity.jpg')", backgroundPosition: "center", backgroundSize: "cover", paddingTop:"1px", paddingLeft: "20px", position: "relative"}}>
-    <h1 style={{width: "550px", maxWidth: "90%", padding: "10px", backdropFilter: "blur(2px)", border: "solid 2px rgba(0,0,0,0.2)", borderRadius: "6px"}}><b>RiderLinx</b>: Structured registry and record infrastructure for commercial e-bike delivery ecosystems.</h1>
+  return <section style={{height: "100vh", width: "100%", backgroundImage: "url('/homeImg.png')", backgroundSize: "cover", paddingTop:"1px", paddingLeft: "20px", position: "relative", backgroundPosition: "center"}}>
+    <h1 style={{width: "550px", maxWidth: "90%", padding: "10px", backdropFilter: "blur(2px)", border: "solid 2px rgba(0,0,0,0.2)", borderRadius: "6px"}}>Structured registry and record infrastructure for commercial e-bike delivery ecosystems.</h1>
     <div className="heroText" style={{marginTop: "15px", fontSize: "20px", maxWidth: "600px", padding: "5px", backdropFilter: "blur(5px)", border: "solid 2px rgba(0,0,0,0.2)", overflow:"hidden", transition: "height ease-in-out 1s", borderRadius: "6px", interpolateSize: "allow-keywords", height: divHeight.current}} ref={divRef}>
       <div style={{opacity: textOpacity, transition: "opacity linear 0.5s"}}>{rotationText[subTextIdx.current]}</div>
     </div>
