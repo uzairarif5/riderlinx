@@ -6,6 +6,10 @@
 
 Versioning is done using "npm version [new-version] --git-tag-version false".
 
+update 2.2.0:
+- Removed the logo (will be replaced later).
+- Changed "Rider Status" to "RiderStatus".
+
 update 2.1.0:
 - Updated css details to match the demanded request.
 - Removed "privacy" and "disclaimer" from top nav.
