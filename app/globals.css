@@ -23,6 +23,20 @@ body {
     }
   }
 
+  #sideLinks{
+    position: absolute;
+    right: 10px;
+    background-color: var(--primary-color);
+    border: solid 2px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    
+    a{
+      position: block;
+      padding: 10px;
+    }
+
+  }
+
   main {
     section {
       color: var(--text-primary-color-dark);
