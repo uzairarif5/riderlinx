@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
 import Image from 'next/image';
+import { HamburgerButton } from "./sideButton";
 import { notoSans } from "./constants";
 
 export const metadata: Metadata = {
@@ -22,15 +23,10 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
 
 function Header() {
   return <header style={{position: "sticky", top: 0, zIndex: 2}}>
-    <nav className=" w-full" style={{userSelect: "none", position: "relative", padding: "10px", display:"flex", justifyContent:"space-between", flexWrap: "wrap", rowGap: "10px"}}>
-      <Link href={"/"} style={{fontSize: "35px", textDecoration: "none", color: "white", outline: "none"}}>
-        <Image src="/logo.png" alt="" width={50} height={50} style={{display: "inline-block",marginRight:"4px"}}/>
-        RiderLinx
-      </Link>
-      <span style={{display: "flex", columnGap: "20px", alignItems: "center", paddingRight: "5px"}}>
-        <Link href={"/"}>Home</Link>
-        <Link href={"/riderStatus"}>RiderStatus</Link>
-      </span>
+    <nav className=" w-full" style={{position: "relative", padding: "10px", display: "grid", gridTemplateColumns: "50px min-content 50px", justifyContent: "space-between"}}>
+      <div></div>
+      <Link href={"/"} style={{fontSize: "30px", outline: "none", textAlign: "center"}}>RiderLinx</Link>
+      <HamburgerButton/>
     </nav>
   </header>;
 }

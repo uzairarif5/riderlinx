@@ -7,7 +7,7 @@
   --secondary-color:  #2F5D8A;
   --secondary-color-opaque:  rgba(47, 93, 138, 0.9);
   --accent-color: #5B8FB9;
-  --text-primary-color-light: white;
+  --text-primary-color-light: #F4F6F8;
   --text-primary-color-dark: #1F2933;
   --text-secondary-color: #6B7280;
 }
@@ -18,14 +18,8 @@ body {
   header {
     background-color: var(--primary-color);
 
-    nav span a {
+    nav {
       color: var(--text-primary-color-light);
-      border-bottom: 3px var(--primary-color) double;
-      transition: border-bottom-color linear 0.2s;
-
-      &:hover{
-        border-bottom-color: var(--header-color);
-      }
     }
   }
 
@@ -35,23 +29,23 @@ body {
       padding: 80px 20px;
         
       h1 {
-        margin-top: 15vh;
-        font-size: 30px;
+        text-align: center;
+        margin-top: 20vh;
+        margin-bottom: 20px;
+        font-size: 55px;
         color: var(--text-primary-color-light);
-        background-color: var(--primary-color-opaque);
       }
 
       .heroText {
         color: var(--text-primary-color-light);
-        background-color: var(--primary-color-opaque) !important;
 
         h1 {
           margin-top: 0 !important;
         }
 
         p{
-          text-align: left;
-          margin-bottom: 0;
+          margin-bottom: 60px;
+          font-size: 30px;
         }
       }
 
@@ -213,8 +207,12 @@ body {
 @media only screen and (max-width: 700px) {
   body main section { 
     h1 {
-      margin-top: 70px;
-      font-size: 26px;
+      font-size: 35px;
+    }
+
+    .heroText p {
+      font-size: 20px;
+      max-width: 80%;
     }
 
     .heroText+.briefingButton{
@@ -225,18 +223,21 @@ body {
      font-size: 15px; 
     }
 
-    h2 {
-      font-size: 32px;
-    }
-    
-    ul, p, a{
-      font-size: 15px;
-      margin-bottom: 15px;
-    }
+    main{
+      h2 {
+        font-size: 32px;
+      }
+      
+      ul, p, a{
+        font-size: 15px;
+        margin-bottom: 15px;
+      }
 
-    
-    .cardDiv p {
-      font-size: 14px;
+      
+      .cardDiv p {
+        font-size: 14px;
+      }
+
     }
   }
 }

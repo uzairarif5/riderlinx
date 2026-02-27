@@ -6,6 +6,10 @@
 
 Versioning is done using "npm version [new-version] --git-tag-version false".
 
+update 2.3.0:
+- Got a new logo.
+- Made some changes to the hero.
+
 update 2.2.0:
 - Removed the logo (will be replaced later).
 - Changed "Rider Status" to "RiderStatus".

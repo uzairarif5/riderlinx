@@ -1,7 +1,6 @@
 "use client"
 
 import Link from "next/link";
-import Hero from "./homePageComps/Hero";
 import ObserverSection from "./homePageComps/ObserverSection";
 import HowRiderLinxWorks from "./homePageComps/HowRiderLinxWorks";
 import { CardWithTitle } from "./homePageComps/Cards";
@@ -25,6 +24,17 @@ export default function Home() {
     <Contact chgFV={chgFV}/>
     <Form vis={FormVisibility} chgFV={chgFV}/>
   </main>;
+}
+
+function Hero(props: {chgFV: Dispatch<SetStateAction<boolean>>}) {
+  return <section style={{height: "100vh", width: "100%", backgroundImage: "url('/homeImg.png')", backgroundSize: "cover", paddingTop:"1px", paddingLeft: "20px", position: "relative", backgroundPosition: "center"}}>
+    <h1>Safer E-bike Delivery</h1>
+    <div className="heroText">
+      <p>A verified registry and documentation system for commercial E-bike couriers.</p>
+    </div>
+    
+    <button type="button" className="briefingButton" onClick={()=>props.chgFV(true)}>Request a briefing</button>
+  </section>;
 }
 
 
