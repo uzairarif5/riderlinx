@@ -6,6 +6,9 @@
 
 Versioning is done using "npm version [new-version] --git-tag-version false".
 
+update 2.4.1:
+- The side links weren't taking the whole space of the container, that is fixed now.
+
 update 2.4.0:
 - Added a side menu.
 - Updated the rider status hero.
