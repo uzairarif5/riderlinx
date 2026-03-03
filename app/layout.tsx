@@ -8,6 +8,14 @@ import { notoSans } from "./constants";
 export const metadata: Metadata = {
   title: "RiderLinx",
   description: "Structured registry and record infrastructure for commercial e-bike delivery ecosystems.",
+  icons: {
+    icon: "/favicon.ico",
+    apple: [{
+      url: "/favicon.png",
+      sizes: "180x180",
+      type: "image/png",
+    }]
+  }
 };
 
 
@@ -23,7 +31,7 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
 
 function Header() {
   return <header style={{position: "sticky", top: 0, zIndex: 2}}>
-    <nav className=" w-full" style={{position: "relative", padding: "10px", display: "grid", gridTemplateColumns: "50px min-content 50px", justifyContent: "space-between"}}>
+    <nav className=" w-full" style={{position: "relative", padding: "10px", display: "grid", gridTemplateColumns: "50px min-content 50px", justifyContent: "space-between", justifyItems:"center"}}>
       <div></div>
       <Link href={"/"} style={{fontSize: "30px", outline: "none", textAlign: "center"}}>RiderLinx</Link>
       <HamburgerButton/>

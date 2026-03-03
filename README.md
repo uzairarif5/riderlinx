@@ -6,6 +6,9 @@
 
 Versioning is done using "npm version [new-version] --git-tag-version false".
 
+update 2.4.3:
+- Made a separate favicon file for Apple.
+
 update 2.4.2:
 - Changed title and subtitle text.
 
