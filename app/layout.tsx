@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   title: "RiderLinx",
   description: "Structured registry and record infrastructure for commercial e-bike delivery ecosystems.",
   icons: {
-    icon: "/favicon.ico",
-    apple: [{
-      url: "/favicon.png",
-      sizes: "180x180",
-      type: "image/png",
-    }]
+    icon: [
+      { url: "/favicon.ico" },
+    ],
+    apple: [
+      { url: "/favicon.png", type: "image/png", sizes: "32x32" }
+    ]
   }
 };
 
