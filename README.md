@@ -6,6 +6,9 @@
 
 Versioning is done using "npm version [new-version] --git-tag-version false".
 
+update 2.4.2:
+- Changed title and subtitle text.
+
 update 2.4.1:
 - The side links weren't taking the whole space of the container, that is fixed now.
 

@@ -28,11 +28,8 @@ export default function Home() {
 
 function Hero(props: {chgFV: Dispatch<SetStateAction<boolean>>}) {
   return <section style={{height: "100vh", width: "100%", backgroundImage: "url('/homeImg.png')", backgroundSize: "cover", paddingTop:"1px", paddingLeft: "20px", position: "relative", backgroundPosition: "center"}}>
-    <h1>Safer E-bike Delivery</h1>
-    <div className="heroText">
-      <p>A verified registry and documentation system for commercial E-bike couriers.</p>
-    </div>
-    
+    <h1>Commercial E-bike Registry</h1>
+    <div className="heroText"><p>Structured documentation supporting licensing and insurance</p></div>
     <button type="button" className="briefingButton" onClick={()=>props.chgFV(true)}>Request a briefing</button>
   </section>;
 }
